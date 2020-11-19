@@ -1,9 +1,11 @@
 import React , {Component} from 'react';
-import {View,Text,Image,StyleSheet, SectionList,FlatList,Pressable,Alert,SafeAreaView} from 'react-native';
+import {View,Text,Image,StyleSheet, SectionList,FlatList,Pressable,Alert,SafeAreaView,Button} from 'react-native';
 import Http from '../../libs/http';
 import Colors from '../../res/colors';
 import CoinMarketItem from './coinMarketItem';
 import Storage from '../../libs/storage';
+
+
 class CoinDetailScreen extends Component {
     state = {
         coin: {},
@@ -100,10 +102,15 @@ class CoinDetailScreen extends Component {
             this.getFavorite();
         });
     }
+    backToMenu = async () => {
+        
+        this.props.navigation.navigate('MenuCoins');
+      };
     render(){
         const { coin , markets , isFavorite} = this.state;
         return(
             <SafeAreaView style={styles.container}>
+                <Button title="Back" onPress={this.backToMenu} />
                 <View style={styles.subHeader}>
                     <View style={styles.row}>
                         <Image style={styles.iconImg} source={{uri: this.getSymbolIcon(coin.name)}}/>

@@ -9,6 +9,10 @@ import Colors from './src/res/colors';
 import MainTabsNavigator from './src/components/MainTabs/MainTabsNavigator';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import LoginMockApi from './src/components/LOGINMOCKAPP/loginScreenMOCKAPI'
+import HomeMockApi from './src/components/LOGINMOCKAPP/HomeScreenMOCKAPI'
+import CreateAccountMockApi from './src/components/LOGINMOCKAPP/createAccountScreenMOCKAPI'
+
 const Stack = createStackNavigator();
 const App = () => {
   return (
@@ -20,10 +24,13 @@ const App = () => {
                 backgroundColor: Colors.blackPearl,
                 shadowColor: Colors.blackPearl,
             },
-            headerTintColor: Colors.white
+            headerTintColor: Colors.white,
+            headerShown: false
           }}
         >
-        
+          <Stack.Screen name="LoginMOCKAPI" component={ LoginMockApi }/>
+          <Stack.Screen name="HomeMOCKAPI" component={ HomeMockApi }/>
+          <Stack.Screen name="CreateAccountMOCKAPI" component={ CreateAccountMockApi }/>
           <Stack.Screen name="Inicio" component={ InicioScreen }/>
           <Stack.Screen name="InicioSesion" component={ LoginScreen }/>
           <Stack.Screen name="MainTabs" component={ MainTabsNavigator } />

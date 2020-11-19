@@ -6,6 +6,7 @@ import CoinsItem from 'cryptoTracker/src/components/MenuCoins/CoinsItem';
 
 import Colors from 'cryptoTracker/src/res/colors';
 import Storage from 'cryptoTracker/src/libs/storage';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 class FavoritesScreen extends Component {
 
@@ -50,7 +51,8 @@ class FavoritesScreen extends Component {
     const { favorites } = this.state;
 
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
+      <View>
 
        { favorites.length == 0 ?
         <FavoritesEmptyState />
@@ -71,6 +73,7 @@ class FavoritesScreen extends Component {
        }
 
       </View>
+      </SafeAreaView>
     );
   }
 }

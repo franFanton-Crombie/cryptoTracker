@@ -3,15 +3,14 @@ import {
     FlatList,
     ActivityIndicator,
     SafeAreaView,
-    StyleSheet
+    StyleSheet,
+    Button
 } from 'react-native';
 import Colors from '../../res/colors';
 import Http from '../../libs/http';
 import CoinsItem from './CoinsItem';
 import CoinsSearch from './coinSearch';
-
 class MenuCoins extends React.Component {
-
     state = {
         coins: [],
         allCoins: [],
@@ -21,6 +20,7 @@ class MenuCoins extends React.Component {
         this.getCoins();
     }
     getCoins = async () => {
+        console.log(login,auth_token)
         this.setState({ loading: true});
         // DATOS EXTRAIDOS DE LA API
         const res = await Http.instance.get("https://api.coinlore.net/api/tickers/");
@@ -41,6 +41,7 @@ class MenuCoins extends React.Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
+                <Button title="Log out" onPress={() => this.props.navigation.navigate('LoginMOCKAPI')} />
                 <CoinsSearch onChange={this.handleSearch} />
                 {this.state.loading ? 
                     <ActivityIndicator style={styles.loader} color='black' size="large" />

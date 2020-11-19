@@ -61,8 +61,7 @@ class LoginScreen extends Component {
                 }
             ])
             this.props.navigation.navigate("MenuCoins", { user });
-        }
-        
+        }   
       }
     render(){
         return (
