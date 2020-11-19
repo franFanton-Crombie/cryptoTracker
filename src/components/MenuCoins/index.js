@@ -20,7 +20,7 @@ class MenuCoins extends React.Component {
         this.getCoins();
     }
     getCoins = async () => {
-        console.log(login,auth_token)
+        console.log(login)
         this.setState({ loading: true});
         // DATOS EXTRAIDOS DE LA API
         const res = await Http.instance.get("https://api.coinlore.net/api/tickers/");

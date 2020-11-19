@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">cryptoTracker</string>
     <string name="facebook_app_id">4056846527676627</string>
+    <string name="server_client_id">404956027539-7i92t7srm59s7ajp8m3oqoooom8kmgqt.apps.googleusercontent.com</string>
 </resources>
